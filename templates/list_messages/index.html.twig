@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListMessagesController!
+{% endblock %}
+{% block head %}
+	<style>
+		.bordered {
+			border: 2px solid #000; /* Une bordure noire de 2 pixels */
+			padding: 10px; /* Ajout de padding pour l'espace à l'intérieur de la bordure */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1em;
+            border-radius: 15px;
+		}
+	</style>
+{% endblock %}
+{% block body %}
+
+	{% for item in messages %}
+		<div class="bordered">
+			<h1>{{item.title}}</h1>
+			<p>{{item.body}}</p>
+
+
+		</div>
+	{% endfor %}
+
+{% endblock %}

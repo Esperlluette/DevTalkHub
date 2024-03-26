@@ -1,13 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}A propos{% endblock %}
+{% block title %}A propos
+{% endblock %}
 
 {% block body %}
-<h1>A propos de ce site  </h1>
 
-<p>ce site est une vitrine de mes compétences. il n'est pas prévu que de véritables humains s'inscrivent sur ce site.</p>
-<p>Ce site n'est pas conforme aux RGPD il est déconseillé de rentrer tout type d'information personnelle dans aucun des formulaires présents </p>
+	<main>
+		<section id="about">
+			<h2>À propos</h2>
 
-<p>En cas de problème avec ce site web je suis disponible à l'email suivant <strong>contactdevtalk@gmail.com</strong></p>
+			<p>Bienvenue sur Dev talk hub, une vitrine numérique conçue exclusivement à des fins de démonstration de compétences. Ce site a été créé dans le but de présenter mes différentes aptitudes dans le domaine développement web orienté back-end. En explorant ce site, vous découvrirez divers projets, réalisations et compétences que j'ai développés au fil du temps.</p>
 
+			<h3>Avertissement</h3>
+
+			<p>Veuillez noter que Dev talk hub n'est pas un site fonctionnel destiné à un usage personnel ou professionnel. Il a été élaboré dans un contexte strictement démonstratif pour mettre en lumière mes compétences et expériences.</p>
+
+			<p>à la création d'un compte vous aurez un accès administrateur sur le site, il sera cependant impossible d'effectuer des commandes sur le site ou sa base de données, ce compte administrateur pourra être utilisé seulement pour avoir accées au pannel administrateur pour la gestion des sujets et des messages.</p>
+			
+			<p><strong> Vous pouver inventer un email du type jesuisun@email.mail ou utiliser une adresse email jetable comme 10 minutes mail. ce qui est très conseillé car ABSOLUMENT tout les utilisateurs seront administrateurs du site. </strong></p>
+			<p> à noter que si par mégarde vous êtes amené à entrer des information confidentielles il est possible de les supprimer. pour cela il faut se connecter à un compte avec un accès administrateur, aller dans le portail de gestion du site, cliquer sur USER dans le menu à gauche et de supprimer l'utilisateur voulu en appuyant sur les trois petits points puis le bouton rouge.
+			<p>Pour tout problème je reste disponible à l'adresse contactdevtalk@gmail.com</p>
+			<h3>Technologies et Dépendances</h3>
+			<p>Ce site a été développé en utilisant un ensemble spécifique de technologies et de dépendances. Les principales technologies incluent
+			</p>
+			<ul>
+				<li>Apache 2.4 : server web</li>
+				<li>Symfony 6 : framework php</li>
+			</ul>
+			<p>tandis que les dépendances importantes sont
+			</p>
+			<ul>
+				<li>easyAdmin : admin crud</li>
+			</ul>
+			<p>Cette plateforme a été optimisée pour une expérience de navigation fluide, bien que son objectif principal demeure la démonstration de compétences techniques et créatives.</p>
+
+			<h3>Confidentialité et Sécurité</h3>
+
+			<p>Pour des raisons de confidentialité et de sécurité, nous vous déconseillons vivement de fournir des informations personnelles réelles telles que votre adresse e-mail, votre nom ou votre prénom lors de l'exploration de ce site. Dev talk hub ne collecte ni ne stocke aucune donnée personnelle, et toute tentative de création de compte avec des informations réelles est fortement déconseillée.</p>
+
+			<h3>Découvrez Mon Savoir-Faire</h3>
+
+			<p>Explorez les différentes sections de ce site pour en apprendre davantage sur mes compétences, mes projets passés et mes réalisations. Si vous avez des questions ou souhaitez en savoir plus, n'hésitez pas à me contacter à l'adresse suivante :
+				<a href="mailto:contactdevtalk@gmail.com">contactdevtalk@gmail.com</a>.</p>
+		</section>
+	</main>
+	<style>
+		main {
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+		}
+		#about h2,
+		#about h3 {
+			color: #333;
+		}
+	</style>
 {% endblock %}

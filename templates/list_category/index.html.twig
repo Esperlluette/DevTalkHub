@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListCategoryController!
+{% endblock %}
+{% block head %}
+
+	<style>
+		.bordered {
+			border: 2px solid #000; /* Une bordure noire de 2 pixels */
+			padding: 10px; /* Ajout de padding pour l'espace à l'intérieur de la bordure */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1em;
+            border-radius: 15px;
+		}
+	</style>
+{% endblock %}
+{% block body %}
+	<pre>
+</pre>
+	{% for item in categories %}
+
+		<a href="https://talk.esperlluette.ovh/messages?category={{item.id}}">
+			<div
+				class="bordered">
+				{{item.name}}
+				lounge :
+				{{item.messages.count}}
+			</div>
+		</a>
+
+	{% endfor %}
+
+
+{% endblock %}

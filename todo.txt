@@ -1,6 +1,7 @@
-Ajouter une page pour mon CV. 
-Ajouter une page à propos 
-virer ce putain de index.php
+## Ajouter une page pour mon CV. 
+## Ajouter une page à propos 
 
-Ajouter le CRUD admin
+## Ajouter le CRUD admin
 Ajouter les fixtures
+
+Add some APIs 
