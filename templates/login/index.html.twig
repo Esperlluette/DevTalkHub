@@ -8,17 +8,28 @@
 		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 	{% endif %}
 
-	<form action="{{ path('app_login') }}" method="post">
-		<label for="username">Email:</label>
-		<input type="text" id="username" name="_username" value="{{ last_username }}">
+	<div class="login-div">
+	<h1>Se connecter</h1>
+		<form action="{{ path('app_login') }}" method="post">
+			<label for="username">Email:</label><br>
+			<input type="text" id="username" name="_username" value="{{ last_username }}"><br>
 
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="_password">
+			<label for="password">Password:</label><br>
+			<input type="password" id="password" name="_password"><br>
 
-		{# If you want to control the URL the user is redirected to on success
-		        <input type="hidden" name="_target_path" value="/account"> #}
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+			<button type="submit" class="btn btn-primary">Register</button>
+		</form>
+	</div>
 
-		{#CSRF TOKEN#}
-		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"> <button type="submit">login</button>
-	</form>
+	<style>
+		.login-div {
+			width: 340px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin: auto;
+			display: grid;
+			place-items: center;
+		}
+	</style>
 {% endblock %}

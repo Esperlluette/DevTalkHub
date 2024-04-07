@@ -1,24 +1,59 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
 
-    <h1>Register</h1>
+	<div class="login-div">
+		<h1>S'enregistrer</h1>
+		{{ form_errors(registrationForm) }}
+		{{ form_start(registrationForm) }}
+		{{ form_label(registrationForm.email, 'Email', {label_attr: {style: ''}}) }}
+		{{ form_widget(registrationForm.email, {attr: {placeholder: 'Email', autofocus: 'autofocus', autocomplete: '', style: ''}}) }}
+		<br>
 
-    {{ form_errors(registrationForm) }}
+		{{ form_label(registrationForm.name, 'Nom', {label_attr: {style: ''}}) }}
+		{{ form_widget(registrationForm.name, {attr: {placeholder: 'Nom', autofocus: 'autofocus', autocomplete: 'Nom', style: ''}}) }}<br>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-         {{ form_row(registrationForm.name) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+		{{ form_label(registrationForm.plainPassword, 'Mot de passe', {label_attr: {style: ''}}) }}
+		{{ form_widget(registrationForm.plainPassword, {attr: {placeholder: 'Mot de passe', autofocus: 'autofocus', autocomplete: '', style: ''}}) }}
 
-        <button type="submit" class="btn btn-primary">Register</button>
-    {{ form_end(registrationForm) }}
-{% endblock %}
+
+		{{ form_row(registrationForm.agreeTerms) }}
+		<button type="submit" class="btn btn-primary">Register</button>
+		{{ form_end(registrationForm) }}
+
+	</div>
+	<div class="notabene">
+		Note du développeur. <br>
+		Ce site ne sécurise pas ses données utilisateur, il n'est pas conforme au RGPD ce n'est pas le but.<br>
+		Le développeur ne saura être tenu responsable en cas de fuite de données. <br>
+		En vous enregistrant vous êtes tenus de charger de fausses informations vous concernant<br>
+
+		Plus d'informations dans la rubrique à propos <a href="{{path('app_about')}}">à propos</a>
+
+		<div>
+			<style>
+				.login-div {
+					width: 340px;
+					border: 1px solid #ccc;
+					border-radius: 5px;
+					margin: auto;
+					display: grid;
+					place-items: center;
+				}
+				.notabene {
+					margin: auto;
+					display: grid;
+					place-items: center;
+					border-radius: 5px;
+					text-align:center;
+				}
+			</style>
+
+
+		{% endblock %}

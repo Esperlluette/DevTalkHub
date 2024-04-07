@@ -6,9 +6,10 @@
 		<title>
 			{% block title %}{% endblock %}
 		</title>
-			{% block head %}{% endblock %}
+		{% block head %}{% endblock %}
 	</head>
-	<body>
+	<body style="height:100vh;">
+
 		<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="{{ path('app_home') }}">
@@ -43,27 +44,22 @@
 		<footer class="bg-light fixed-bottom py-4">
 			<div class="container text-center">
 				<p>&copy;
-					{{ 'now' | date('Y') }}
+					{{ 'now' | date('Y') }}Dev Talk Hub. Ce site n'existe qu'à des fins de démonstrations, lisez le à propos pour plus d'informations.
+				</p>
+			</br>
+			*Si vous souhaitez créer un compte, il est fortement conseillé de ne pas soumettre de donneés à caractères personnelle. email, nom, prénom <a href='{{path('app_about')}}'>Plus d'informations...</a>
 
-					Dev Talk Hub. Ce site n'existe qu'à des fins de démonstrations, lisez le à propos pour plus d'informations. </br>
-					*Si vous souhaitez créer un compte, il est fortement conseillé de ne pas soumettre de donneés à caractères personnelle. email, nom, prénom
-					 
-					</p>
-				<ul class="list-inline">
-					<li class="list-inline-item">
-						<a href="{{path('app_home')}}">Accueil</a>
-					</li>
-					<li class="list-inline-item">
-						<a href="{{path('app_about')}}">À propos</a>
-					</li>
-					<li class="list-inline-item">
-						<a href="{{path('app_cv')}}">CV du créateur</a>
-					</li>
-				</ul>
-			</div>
-		</footer>
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		</p>
+		<ul class="list-inline">
+			<li class="list-inline-item">
+				<a href="{{path('app_home')}}">Accueil</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="{{path('app_about')}}">À propos</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="{{path('app_cv')}}">CV du créateur</a>
+			</li>
+		</ul>
 	</body>
-</html>
+</html></div></footer><script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script></body></html>

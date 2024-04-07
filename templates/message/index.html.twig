@@ -1,20 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MessageController!{% endblock %}
+{% block title %}Hello MessageController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/dev_talk_hub/src/Controller/MessageController.php'|file_link(0) }}">src/Controller/MessageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/dev_talk_hub/templates/message/index.html.twig'|file_link(0) }}">templates/message/index.html.twig</a></code></li>
-    </ul>
-</div>
+	<div class="message-div">
+		<div>
+			<h1>{{message[0].title}}</h1>
+			<p>{{message[0].body}}</p>
+		</div>
+
+		<div class="primary-message-footer">
+
+			<p>
+				Auteur :{{message[0].author.name}}
+			</p>
+			{% if message[0].author.id == userid %}
+				<div>
+					<button type="button" id="mod">Modifier
+					</button>
+					<button type="button">Supprimer</button>
+				</div>
+			{% endif %}
+		</div>
+
+	</div>
+
+	<script>
+		console.log("ok");
+var btn = document.getElementById("mod");
+btn.addEventListener("click", function () { // redirect to home.
+window.location.replace("{{ path('app_home') }}");
+});
+	</script>
+	<style>
+		.message-div {
+			width: 70em;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin: auto; /* Centre horizontalement et verticalement */
+		}
+		.primary-message-footer {
+			display: flex;
+			flex-direction: row;
+		}
+	</style>
+
 {% endblock %}
