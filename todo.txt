@@ -4,4 +4,7 @@
 ## Ajouter le CRUD admin
 Ajouter les fixtures
 
+ajouter de changement de mail et de mot de passe 
+ajoute de modifixation et la suppression des messages
+réduire l'affichage du texte dans les preview de messages 
 Add some APIs 
