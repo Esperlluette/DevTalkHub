@@ -7,4 +7,5 @@ Ajouter les fixtures
 ajouter de changement de mail et de mot de passe 
 ajoute de modifixation et la suppression des messages
 réduire l'affichage du texte dans les preview de messages 
+améliorer le formulaire de creation de messaages 
 Add some APIs 
